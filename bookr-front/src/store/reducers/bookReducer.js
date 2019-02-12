@@ -15,7 +15,6 @@ export const bookReducer = (state = initialState, action) => {
             }
 
         case FETCH_BOOKS_SUCCESS:
-            console.log(action.payload.data)
             return {
                 ...state,
                 fetchingBooks: false,
@@ -26,7 +25,7 @@ export const bookReducer = (state = initialState, action) => {
             return {
                 ...state,
                 fetchingBooks: false,
-                error: action.payload
+                error: action.payload.err
             }    
 
          default:

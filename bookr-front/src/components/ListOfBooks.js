@@ -1,13 +1,12 @@
 import React from 'react'
+import BookItem from './BookItem'
 
 const ListOfBooks = (props, id) => {
     return(
         <div key={id}>
             {props.books.map(book => {
                 return (
-                    <div>
-                        <h3>{book.title}</h3>
-                    </div>
+                    <BookItem book={book}/>
                 )
             })}
         </div>

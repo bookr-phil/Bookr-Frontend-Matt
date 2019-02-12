@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import { LoginView, BookListView } from './views'
+import { LoginView, BookListView, BookView } from './views'
 
 
 class App extends Component {
@@ -9,7 +9,8 @@ class App extends Component {
     return (
       <div className="App">
           <Route exact path ="/login" component={LoginView} />
-          <Route path = '/' component={BookListView} />
+          <Route exact path = '/' component={BookListView} />
+          <Route path = '/bookview/:id' component={BookView}/>
       </div>
     );
   }
