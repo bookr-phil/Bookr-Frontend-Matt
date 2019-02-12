@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { fetchReviews, fetchBooks } from '../store/actions/bookAction'
+import { fetchReviews, fetchBooks, addReview } from '../store/actions/bookAction'
 import IndividualBook from '../components/IndividualBook'
 import ReviewForm from '../components/ReviewForm'
 
@@ -34,6 +34,7 @@ class BookView extends React.Component {
                         <ReviewForm 
                         book = {book}
                         review = {review}
+                        addReview = {this.props.addReview}
                         />
                     </div>
                     
@@ -51,14 +52,16 @@ const mapStateToProps = state => ({
     isFetchingReviews: state.reviewReducer.isFetchingReviews,
     reviews: state.reviewReducer.reviews,
     fetchingBooks: state.bookReducer.fetchingBooks,
-    books: state.bookReducer.books
+    books: state.bookReducer.books,
+    isPostingReview: state.reviewReducer.isPostingReview
 })
 
 export default withRouter(connect(
     mapStateToProps,
     {
         fetchBooks,
-        fetchReviews
+        fetchReviews,
+        addReview
     }
 )(BookView))
 

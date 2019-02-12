@@ -1,7 +1,8 @@
-import { FETCH_REVIEWS_START, FETCH_REVIEWS_SUCCESS, FETCH_REVIEWS_ERROR } from '../actions/bookAction'
+import { FETCH_REVIEWS_START, FETCH_REVIEWS_SUCCESS, FETCH_REVIEWS_ERROR, POST_REVIEW_START, POST_REVIEW_SUCCESS, POST_REVIEW_ERROR } from '../actions/bookAction'
 
 const initialState = {
     isFetchingReviews: false,
+    isPostingReview: false,
     reviews: [],
     error: ''
 }
@@ -26,6 +27,25 @@ export const reviewReducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 isFetchingReviews: false,
+                error: action.payload
+            } 
+            
+        case POST_REVIEW_START:
+            return {
+                ...state,
+                isPostingReview: true
+            }
+
+        case POST_REVIEW_SUCCESS:
+            return {
+                ...state,
+                isPostingReview: false
+            }
+
+        case POST_REVIEW_ERROR:
+            return {
+                ...state,
+                isPostingReview: false,
                 error: action.payload
             }    
 
