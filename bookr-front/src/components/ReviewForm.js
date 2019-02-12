@@ -20,9 +20,9 @@ class ReviewForm extends React.Component {
 
     }
 
-    handleRating = (rating, name) => {
+    handleRating = (e) => {
         this.setState({
-            [name]: rating
+            [e.target.name]: e.target.value
         })
     }
 
@@ -39,6 +39,7 @@ class ReviewForm extends React.Component {
             ratingNumber: 0,
             review: '',
         })
+        window.location.reload()
     }
 
     render() {
@@ -53,7 +54,7 @@ class ReviewForm extends React.Component {
                     />
                     <input 
                     type="number"
-                    rating={this.state.rating}
+                    value={this.state.rating}
                     name="rating"
                     onChange={this.handleRating}
                     min="1"
