@@ -8,7 +8,11 @@ const IndividualBook = props => {
     } else {
     return(
         <div>
-            {props.book.title ? <h3>{props.book.title}</h3> : "No book"}
+            <div>
+                {props.book.title ? <h3>{props.book.title}</h3> : "No book"}
+                <h5>{props.book.author}</h5>
+                <p>{props.book.summary}</p>
+            </div>
             {props.review.map(review => {
                 return (
                     <div>

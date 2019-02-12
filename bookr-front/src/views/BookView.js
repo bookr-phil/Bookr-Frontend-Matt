@@ -3,42 +3,45 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { fetchReviews, fetchBooks } from '../store/actions/bookAction'
 import IndividualBook from '../components/IndividualBook'
+import ReviewForm from '../components/ReviewForm'
 
 class BookView extends React.Component {
 
-    state = {
-        books: {},
-        reviews: []
-    }
-
-
     componentDidMount() {
-        this.props.fetchReviews()
-
         this.props.fetchBooks()
+        this.props.fetchReviews()
     }
 
 
 
     render() {
-        if (this.state.books && this.state.reviews) {
-        const book = this.props.books.find(book => book.id.toString() === this.props.match.params.id)
-        const review = this.props.reviews.filter(review => review.books_id === book.id)
-        // if (!this.props.books && !this.props.reviews) {
-        //     return "No books"
-        // } else {
-        // if (this.props.books && this.props.reviews) {
+            if (this.props.books.length > 0 && this.props.reviews.length > 0) {
+            const book = this.props.books.find(book => book.id.toString() === this.props.match.params.id)
+            const review = this.props.reviews.filter(review => review.books_id === book.id)
+            // if (!this.props.books && !this.props.reviews) {
+            //     return "No books"
+            // } else {
+            // if (this.props.books && this.props.reviews) {
 
-        return (
-            <IndividualBook 
-            book = {book}
-            review = {review}
-            isFetchingReviews = {this.props.isFetchingReviews}
-            fetchingBooks = {this.props.fetchingBooks}
-            />
-        )
-        } 
-    }
+                return (
+                    <div>
+                        <IndividualBook 
+                        book = {book}
+                        review = {review}
+                        isFetchingReviews = {this.props.isFetchingReviews}
+                        fetchingBooks = {this.props.fetchingBooks}
+                        />
+                        <ReviewForm 
+                        book = {book}
+                        review = {review}
+                        />
+                    </div>
+                    
+                )
+            } else {
+                return <p>Loading...</p>
+            }
+        }
     }
 
 
