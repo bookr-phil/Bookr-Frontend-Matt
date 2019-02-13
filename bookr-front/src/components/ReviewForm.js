@@ -15,7 +15,9 @@ const FormButton = styled.button`
     width: 30%;
     margin-left: 5%;
     border-radius: 10px;
-    background: cornsilk;
+    background: #907163;
+    color: white;
+    font-weight: bold;
 `
 
 const InputField = styled.input`

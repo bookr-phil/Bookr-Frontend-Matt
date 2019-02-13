@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const StyledNav = styled.nav`
     text-align: right;
     margin: 0 auto;
-    background: silver;
+    background: #689775;
     padding-right: 10%;
     padding-top: 2%;
     padding-bottom: 2%;

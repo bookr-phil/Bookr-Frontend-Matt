@@ -11,7 +11,7 @@ const Books = styled.div`
     border: 1px solid black;
     margin: 0 auto;
     margin-bottom: 5%;
-    background: cornsilk;
+    background: #AD8174;
 `
 
 const SubHeader = styled.h2`

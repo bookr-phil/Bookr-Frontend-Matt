@@ -94,6 +94,7 @@ class IndividualBook extends React.Component {
 
 
     render() {
+        console.log(this.props)
         
         if (!this.props.book) {
             return <p>No Book</p>
