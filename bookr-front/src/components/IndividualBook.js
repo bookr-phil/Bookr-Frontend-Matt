@@ -101,7 +101,7 @@ class IndividualBook extends React.Component {
             return(
                 <ListofBooks>
                     <StyledInfo>
-                        <DeleteButton onClick = {this.openModal}>Delete Book</DeleteButton>
+                        {this.props.book.id > 10 && <DeleteButton onClick = {this.openModal}>Delete Book</DeleteButton>}
                         <StyledHeader>{this.props.book.title}</StyledHeader>
                         <Image src ='http://i.stack.imgur.com/071TF.jpg' alt="book"/>
                         <h5>Written by <strong>{this.props.book.author}</strong></h5>

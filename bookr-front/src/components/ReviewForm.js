@@ -9,10 +9,27 @@ const FormContainer = styled.div`
 `
 const StyledForm = styled.form`
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 `
 const FormButton = styled.button`
     width: 30%;
+    margin-left: 5%;
+    border-radius: 10px;
+    background: cornsilk;
+`
+
+const InputField = styled.input`
+    margin-right: 10%;
+    margin-bottom: 3%;
+`
+
+const StyledSub = styled.h2`
+    text-align: center;
+    margin-bottom: 2%;
+    border-bottom: 1px solid black;
+    padding-bottom: 2%;
+    width: 80%;
+    margin-left: 10%;
 `
 
 class ReviewForm extends React.Component {
@@ -59,29 +76,33 @@ class ReviewForm extends React.Component {
 
     render() {
         return(
-            <FormContainer>
-                <StyledForm onSubmit={this.handleAddReview}>
-                    <div>
-                        <input 
-                        type="text"
-                        name='review'
-                        value={this.state.review}
-                        onChange={this.handleChanges}
-                        size='75'
-                        placeholder="Enter Review"
-                        />
-                        <input 
-                        type="number"
-                        value={this.state.rating}
-                        name="rating"
-                        onChange={this.handleRating}
-                        min="1"
-                        max="5"
-                        />
-                    </div> 
-                    <FormButton type="submit">Submit Review</FormButton>
-                </StyledForm>
-            </FormContainer>
+            <div>
+                <StyledSub>Add a Review</StyledSub>
+                <FormContainer>
+                    <StyledForm onSubmit={this.handleAddReview}>
+                        <div>
+                            <InputField 
+                            type="text"
+                            name='review'
+                            value={this.state.review}
+                            onChange={this.handleChanges}
+                            size='50'
+                            placeholder="Enter Review"
+                            />
+                            <InputField 
+                            type="number"
+                            value={this.state.rating}
+                            name="rating"
+                            onChange={this.handleRating}
+                            min="1"
+                            max="5"
+                            />
+                        </div> 
+                        <FormButton type="submit">Submit Review</FormButton>
+                    </StyledForm>
+                </FormContainer>
+            </div>
+
         )
     }
 }

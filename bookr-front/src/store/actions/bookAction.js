@@ -62,7 +62,7 @@ export const deleteBook = id => dispatch => {
         .delete(`books/${id}`)
         .then(res => {
             console.log(res)
-            dispatch({ type: DELETE_BOOK_START })
+            dispatch({ type: DELETE_BOOK_SUCCESS })
         })
         .catch(err => {
             console.log(err)
