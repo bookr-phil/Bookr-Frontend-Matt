@@ -20,7 +20,6 @@ const IndividualBook = props => {
                         <p>Rating: {review.rating} stars / 5 stars</p>
                         <p>Review: {review.review}</p>
                     </div>    
-                    
                 )
             })}
         </div>

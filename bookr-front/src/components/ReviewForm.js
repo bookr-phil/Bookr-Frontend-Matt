@@ -39,7 +39,6 @@ class ReviewForm extends React.Component {
             ratingNumber: 0,
             review: '',
         })
-        window.location.reload()
     }
 
     render() {

@@ -48,6 +48,6 @@ export const addReview = reviewInfo => dispatch => {
         })
         .catch(err => {
             console.log(err)
-            dispatch({ type: POST_REVIEW_ERROR})
+            dispatch({ type: POST_REVIEW_ERROR })
         })
 }
