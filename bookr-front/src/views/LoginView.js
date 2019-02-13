@@ -25,7 +25,7 @@ class LoginView extends React.Component {
     handleLogin = e => {
         e.preventDefault()
         this.props.userLogin(this.state.inputLogin)
-        this.props.history.push('/')
+        this.props.history.push('/home')
     }
 
     render() {

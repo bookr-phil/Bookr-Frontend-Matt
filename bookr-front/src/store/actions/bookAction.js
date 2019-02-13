@@ -12,6 +12,10 @@ export const POST_REVIEW_START = "POST_REVIEW_START"
 export const POST_REVIEW_SUCCESS = "POST_REVIEW_SUCCESS"
 export const POST_REVIEW_ERROR = "POST_REVIEW_ERROR"
 
+export const DELETE_BOOK_START = "DELETE_BOOK_START"
+export const DELETE_BOOK_SUCCESS = "DELETE_BOOK_SUCCESS"
+export const DELETE_BOOK_ERROR = "DELETE_BOOK_ERROR"
+
 
 export const fetchBooks = () => dispatch => {
     dispatch({ type: FETCH_BOOKS_START })
@@ -49,5 +53,19 @@ export const addReview = reviewInfo => dispatch => {
         .catch(err => {
             console.log(err)
             dispatch({ type: POST_REVIEW_ERROR })
+        })
+}
+
+export const deleteBook = id => dispatch => {
+    dispatch({ type: DELETE_BOOK_START, payload: id })
+    demoAPI
+        .delete(`books/${id}`)
+        .then(res => {
+            console.log(res)
+            dispatch({ type: DELETE_BOOK_START })
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({ type: DELETE_BOOK_ERROR })
         })
 }

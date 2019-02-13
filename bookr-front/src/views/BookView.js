@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { fetchReviews, fetchBooks, addReview } from '../store/actions/bookAction'
+import { fetchReviews, fetchBooks, addReview, deleteBook } from '../store/actions/bookAction'
 import IndividualBook from '../components/IndividualBook'
 import ReviewForm from '../components/ReviewForm'
 
@@ -22,7 +22,6 @@ class BookView extends React.Component {
             //     return "No books"
             // } else {
             // if (this.props.books && this.props.reviews) {
-
                 return (
                     <div>
                         <IndividualBook 
@@ -30,6 +29,7 @@ class BookView extends React.Component {
                         review = {review}
                         isFetchingReviews = {this.props.isFetchingReviews}
                         fetchingBooks = {this.props.fetchingBooks}
+                        deleteBook = {this.props.deleteBook}
                         />
                         <ReviewForm 
                         book = {book}
@@ -61,7 +61,8 @@ export default withRouter(connect(
     {
         fetchBooks,
         fetchReviews,
-        addReview
+        addReview,
+        deleteBook
     }
 )(BookView))
 

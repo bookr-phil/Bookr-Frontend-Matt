@@ -1,4 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
+const FormContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+`
+const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+`
+const FormButton = styled.button`
+    width: 30%;
+`
 
 class ReviewForm extends React.Component {
     constructor(props) {
@@ -39,29 +54,34 @@ class ReviewForm extends React.Component {
             ratingNumber: 0,
             review: '',
         })
+        this.setTimeout((window.location.reload()),500)
     }
 
     render() {
         return(
-            <div>
-                <form onSubmit={this.handleAddReview}>
-                    <input 
-                    type="text"
-                    name='review'
-                    value={this.state.review}
-                    onChange={this.handleChanges}
-                    />
-                    <input 
-                    type="number"
-                    value={this.state.rating}
-                    name="rating"
-                    onChange={this.handleRating}
-                    min="1"
-                    max="5"
-                    />
-                    <button type="submit">Submit Review</button>
-                </form>
-            </div>
+            <FormContainer>
+                <StyledForm onSubmit={this.handleAddReview}>
+                    <div>
+                        <input 
+                        type="text"
+                        name='review'
+                        value={this.state.review}
+                        onChange={this.handleChanges}
+                        size='75'
+                        placeholder="Enter Review"
+                        />
+                        <input 
+                        type="number"
+                        value={this.state.rating}
+                        name="rating"
+                        onChange={this.handleRating}
+                        min="1"
+                        max="5"
+                        />
+                    </div> 
+                    <FormButton type="submit">Submit Review</FormButton>
+                </StyledForm>
+            </FormContainer>
         )
     }
 }
