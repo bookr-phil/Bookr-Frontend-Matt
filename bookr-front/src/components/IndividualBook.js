@@ -19,9 +19,16 @@ const StyledInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media(max-width: 500px) {
+        display: block;
+    }
 `
 const Para = styled.p`
     width: 35%;
+    @media(max-width: 500px) {
+        width: 90%;
+        text-align: right;
+    }
 `
 
 const StyledHeader = styled.h1`
@@ -62,6 +69,10 @@ const SingleReview = styled.div`
     text-align: center;
     margin-left: 30%;
     margin-top:3%;
+    @media(max-width: 500px) {
+        width: 85%;
+        margin-left: 7.5%;
+    }
 `
 
 const StyledLink = styled.a`

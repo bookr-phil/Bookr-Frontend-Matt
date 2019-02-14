@@ -11,6 +11,13 @@ const StyledNav = styled.nav`
     padding-bottom: 2%;
     position: relative;
     width: 100%
+    @media(max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0%;
+    }
+
 `
 
 const StyledLink = styled.span`
@@ -19,6 +26,11 @@ const StyledLink = styled.span`
     margin-left: 5%;
     color: white;
     font-weight: bold;
+    @media(max-width: 500px) {
+        // font-size: 24px;
+        margin-left: 0%;
+    }
+
 `
 
 const NavBar = () => {

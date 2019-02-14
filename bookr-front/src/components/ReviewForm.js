@@ -5,10 +5,16 @@ const FormContainer = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 10%;
+    @media(max-width: 500px) {
+        display: block;
+    }
 `
 const StyledForm = styled.form`
     display: flex;
     justify-content: center;
+    @media(max-width: 500px) {
+        display: block;
+    }
 `
 const FormButton = styled.button`
     width: 30%;
@@ -17,11 +23,18 @@ const FormButton = styled.button`
     background: #907163;
     color: white;
     font-weight: bold;
+    @media(max-width: 500px) {
+        margin-left: 35%;
+    }
 `
 
 const InputField = styled.input`
     margin-right: 10%;
     margin-bottom: 3%;
+    @media(max-width: 500px) {
+        width: 85%;
+        margin-left: 7.5%;
+    }
 `
 
 const StyledSub = styled.h2`
