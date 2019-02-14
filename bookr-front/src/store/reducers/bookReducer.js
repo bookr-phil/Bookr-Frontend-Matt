@@ -57,13 +57,9 @@ export const bookReducer = (state = initialState, action) => {
             }   
             
         case ADD_BOOK_SUCCESS:
-            const bookInfo = {
-                value: action.payload
-            }   
             return {
                 ...state,
                 addingBooks: false,
-                // books: [...state.books, bookInfo],
                 error: ''
             }
 

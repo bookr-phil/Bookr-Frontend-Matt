@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Route } from 'react-router-dom'
 import { LoginView, BookListView, BookView, AddBookView } from './views'
 import NavBar from './views/NavView'

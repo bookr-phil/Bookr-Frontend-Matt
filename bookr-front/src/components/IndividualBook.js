@@ -1,7 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal'
 import { Link } from 'react-router-dom'
-
 import styled from 'styled-components'
 
 const ListofBooks = styled.div`

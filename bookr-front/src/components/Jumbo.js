@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import "./BookItem.css"
 import image from '../books.jpg'
 
 const StyledImage = styled.img`

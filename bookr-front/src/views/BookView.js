@@ -12,16 +12,10 @@ class BookView extends React.Component {
         this.props.fetchReviews()
     }
 
-
-
     render() {
             if (this.props.books.length > 0 && this.props.reviews.length > 0) {
             const book = this.props.books.find(book => book.id.toString() === this.props.match.params.id)
             const review = this.props.reviews.filter(review => review.books_id === book.id)
-            // if (!this.props.books && !this.props.reviews) {
-            //     return "No books"
-            // } else {
-            // if (this.props.books && this.props.reviews) {
                 return (
                     <div>
                         <IndividualBook 
