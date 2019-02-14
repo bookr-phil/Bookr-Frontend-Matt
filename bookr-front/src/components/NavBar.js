@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
+
 const StyledNav = styled.nav`
     text-align: right;
     margin: 0 auto;
@@ -33,13 +34,13 @@ const StyledLink = styled.span`
 
 `
 
-const NavBar = () => {
+const NavBar = (props) => {
     return(
         <div>
             <StyledNav>
                 <NavLink to="/home"><StyledLink>Home</StyledLink></NavLink>
                 <NavLink to="/home/addbook"><StyledLink>Add New Book</StyledLink></NavLink>
-                <NavLink to="/"><StyledLink>Logout</StyledLink></NavLink>
+                <NavLink to="/"><StyledLink onClick={props.logout()}>Logout</StyledLink></NavLink>
             </StyledNav>
         </div>
     )

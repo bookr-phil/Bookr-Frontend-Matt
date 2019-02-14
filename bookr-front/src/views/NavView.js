@@ -2,9 +2,15 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 
 class NavView extends React.Component {
+
+    logout() {
+        localStorage.clear()
+    }
+    
+
     render() {
         return(
-            <NavBar />
+            <NavBar logout={this.logout} />
         )
     }
 }
