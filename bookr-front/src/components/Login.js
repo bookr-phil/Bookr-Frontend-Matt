@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const TopSpace = styled.div`
     background: #689775;
@@ -61,7 +62,7 @@ const Login = props => {
                 value={props.inputLogin.password}
                 />
                 {/* <StyledButton onClick={props.handleLogin}>Login</StyledButton> */}
-                <StyledButton>Login</StyledButton>
+                <Link to="/home"><StyledButton>Login</StyledButton></Link>
             </StyledForm>
         </div>
     )
