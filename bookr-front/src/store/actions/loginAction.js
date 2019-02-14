@@ -9,8 +9,8 @@ export const userLogin = inputLogin => dispatch => {
     API
         .post(`login`, inputLogin)
         .then(res => {
-            API.defaults.headers.common['Authorization'] = res.data.token
-            dispatch({ type: SUCCESS_LOGIN_USER, payload: res.data.books })
+            // API.defaults.headers.common['Authorization'] = res.data.token
+            dispatch({ type: SUCCESS_LOGIN_USER })
             localStorage.setItem('token', res.data.token)
         })
         .catch(err => {
