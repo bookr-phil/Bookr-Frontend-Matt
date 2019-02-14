@@ -12,7 +12,7 @@ class BookListView extends React.Component {
 
     render() {
         // console.log(this.props)
-        if (!localStorage) {
+        if (!this.localStorage) {
             this.props.history.push('/')
         } 
         return (
