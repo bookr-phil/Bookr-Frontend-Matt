@@ -12,6 +12,7 @@ const StyledBook = styled.div`
     padding: 40px;
     text-align: center;
     background: white;
+    box-shadow: 3px 6px;
 `
 
 const Image = styled.img`
