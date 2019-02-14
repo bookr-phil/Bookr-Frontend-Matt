@@ -60,7 +60,8 @@ const Login = props => {
                 onChange={props.handleChange}
                 value={props.inputLogin.password}
                 />
-                <StyledButton onClick={props.handleLogin}>Login</StyledButton>
+                {/* <StyledButton onClick={props.handleLogin}>Login</StyledButton> */}
+                <StyledButton>Login</StyledButton>
             </StyledForm>
         </div>
     )
