@@ -41,7 +41,7 @@ const NavBar = (props) => {
             <StyledNav>
                 <NavLink to="/home"><StyledLink>Home</StyledLink></NavLink>
                 <NavLink to="/home/addbook"><StyledLink>Add New Book</StyledLink></NavLink>
-                <NavLink to="/"><StyledLink onClick={localStorage.clear()}>Logout</StyledLink></NavLink>
+                <NavLink to="/"><StyledLink onClick={localStorage.clear}>Logout</StyledLink></NavLink>
             </StyledNav>
         </div>
     )
