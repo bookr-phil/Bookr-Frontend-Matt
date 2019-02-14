@@ -35,12 +35,13 @@ const StyledLink = styled.span`
 `
 
 const NavBar = (props) => {
+    console.log(props)
     return(
         <div>
             <StyledNav>
                 <NavLink to="/home"><StyledLink>Home</StyledLink></NavLink>
                 <NavLink to="/home/addbook"><StyledLink>Add New Book</StyledLink></NavLink>
-                <NavLink to="/"><StyledLink onClick={props.logout()}>Logout</StyledLink></NavLink>
+                <NavLink to="/"><StyledLink onClick={localStorage.clear()}>Logout</StyledLink></NavLink>
             </StyledNav>
         </div>
     )
