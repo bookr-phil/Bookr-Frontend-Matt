@@ -65,6 +65,12 @@ const SingleReview = styled.div`
     margin-top:3%;
 `
 
+const StyledLink = styled.a`
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: -3%;
+`
+
 class IndividualBook extends React.Component {
     constructor() {
         super();
@@ -108,6 +114,7 @@ class IndividualBook extends React.Component {
                         <h5>Written by <strong>{this.props.book.author}</strong></h5>
                         <h6>Published by {this.props.book.publisher}</h6>
                         <Para>{this.props.book.summary}</Para>
+                        <StyledLink href="https://www.barnesandnoble.com/">Buy Here!</StyledLink>
                     </StyledInfo>
                     <Modal
                     isOpen = {this.state.showModal}
