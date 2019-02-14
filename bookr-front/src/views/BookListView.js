@@ -11,10 +11,10 @@ class BookListView extends React.Component {
     }
 
     render() {
-        console.log(this.props)
-        if (!localStorage.token) {
-            this.props.history.push('/login')
-        } 
+        // console.log(this.props)
+        // if (!localStorage.token) {
+        //     this.props.history.push('/login')
+        // } 
         return (
             <div>
                 <ListOfBooks {...this.props} books={this.props.books}/>
