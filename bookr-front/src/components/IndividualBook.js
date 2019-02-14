@@ -34,6 +34,9 @@ const Para = styled.p`
 const StyledHeader = styled.h1`
     font-size: 90px;
     margin-top: 2%;
+    @media(max-width: 500px) {
+        font-size: 55px;
+    }
 `
 
 const DeleteButton = styled.button`
