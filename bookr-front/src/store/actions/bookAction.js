@@ -16,6 +16,10 @@ export const DELETE_BOOK_START = "DELETE_BOOK_START"
 export const DELETE_BOOK_SUCCESS = "DELETE_BOOK_SUCCESS"
 export const DELETE_BOOK_ERROR = "DELETE_BOOK_ERROR"
 
+export const ADD_BOOK_START = "ADD_BOOK_START"
+export const ADD_BOOK_SUCCESS = "ADD_BOOK_SUCCESS"
+export const ADD_BOOK_ERROR = "ADD_BOOK_ERROR"
+
 
 export const fetchBooks = () => dispatch => {
     dispatch({ type: FETCH_BOOKS_START })
@@ -67,5 +71,19 @@ export const deleteBook = id => dispatch => {
         .catch(err => {
             console.log(err)
             dispatch({ type: DELETE_BOOK_ERROR })
+        })
+}
+
+export const addBook = bookInfo => dispatch => {
+    dispatch({ type: ADD_BOOK_START, payload: bookInfo })
+    demoAPI
+        .post(`books`, bookInfo)
+        .then(res => {
+            console.log(res)
+            dispatch({ type: ADD_BOOK_SUCCESS, payload: res.data})
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({ type: ADD_BOOK_ERROR, payload: err })
         })
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import { LoginView, BookListView, BookView } from './views'
+import { LoginView, BookListView, BookView, AddBookView } from './views'
 import NavBar from './views/NavView'
 import Jumbo from './components/Jumbo'
 
@@ -15,6 +15,7 @@ class App extends Component {
           <Route exact path ="/" component={LoginView} />
           <Route exact path = '/home' component={BookListView} />
           <Route path = '/home/bookview/:id' component={BookView}/>
+          <Route path = '/home/addbook' component={AddBookView} />
       </div>
     );
   }

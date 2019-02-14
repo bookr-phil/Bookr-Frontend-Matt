@@ -27,6 +27,7 @@ const NavBar = () => {
         <div>
             <StyledNav>
                 <NavLink to="/home"><StyledLink>Home</StyledLink></NavLink>
+                <NavLink to="/home/addbook"><StyledLink>Add New Book</StyledLink></NavLink>
                 <NavLink to="/"><StyledLink>Logout</StyledLink></NavLink>
             </StyledNav>
         </div>

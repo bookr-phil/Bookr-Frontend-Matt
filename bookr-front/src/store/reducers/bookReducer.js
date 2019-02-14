@@ -1,9 +1,11 @@
-import { FETCH_BOOKS_START, FETCH_BOOKS_SUCCESS, FETCH_BOOKS_ERROR, DELETE_BOOK_START, DELETE_BOOK_SUCCESS, DELETE_BOOK_ERROR } from '../actions/bookAction'
+import { FETCH_BOOKS_START, FETCH_BOOKS_SUCCESS, FETCH_BOOKS_ERROR, DELETE_BOOK_START, DELETE_BOOK_SUCCESS, DELETE_BOOK_ERROR, ADD_BOOK_ERROR, ADD_BOOK_START, ADD_BOOK_SUCCESS } from '../actions/bookAction'
+
 
 const initialState = {
     fetchingBooks: false,
     books: [],
     deletingBooks: false,
+    addingBooks: false,
     error: ""
 }
 
@@ -45,6 +47,30 @@ export const bookReducer = (state = initialState, action) => {
             return {
                 ...state,
                 deletingBooks: false,
+                error: action.payload
+            }   
+            
+        case ADD_BOOK_START:
+            return {
+                ...state,
+                addingBooks: true,
+            }   
+            
+        case ADD_BOOK_SUCCESS:
+            const bookInfo = {
+                value: action.payload
+            }   
+            return {
+                ...state,
+                addingBooks: false,
+                // books: [...state.books, bookInfo],
+                error: ''
+            }
+
+        case ADD_BOOK_ERROR:
+            return {
+                ...state,
+                addingBooks: false,
                 error: action.payload
             }    
     
